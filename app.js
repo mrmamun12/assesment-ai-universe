@@ -43,7 +43,7 @@ const displayData = (datas, limete) => {
           </div>
           <div>
                 <button class="arrow-btn"      data-bs-toggle="modal"
-                  data-bs-target="#itemDetails" onclick="loadDataWithId('${data.id}')"> <i class="fa-solid fa-arrow-right" style="color: #b83232;"></i>
+                  data-bs-target="#itemDetails" onclick="loadDataById('${data.id}')"> <i class="fa-solid fa-arrow-right" style="color: #b83232;"></i>
                 </button>
            </div>
         </div>
@@ -74,6 +74,11 @@ const showAll = (limite) => {
   loadData();
 };
 
+const loadDataById = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+};
 
 
 loadData(3);
