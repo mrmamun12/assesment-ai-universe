@@ -43,7 +43,7 @@ const displayData = (datas, limete) => {
           </div>
           <div>
                 <button class="arrow-btn"      data-bs-toggle="modal"
-                  data-bs-target="#itemDetails" onclick="loadDataById('${data.id}')"> <i class="fa-solid fa-arrow-right" style="color: #b83232;"></i>
+                  data-bs-target="#itemDetails" onclick="loadDataWithId('${data.id}')"> <i class="fa-solid fa-arrow-right" style="color: #b83232;"></i>
                 </button>
            </div>
         </div>
@@ -74,12 +74,55 @@ const showAll = (limite) => {
   loadData();
 };
 
-const loadDataById = async (id) => {
+const loadDataWithId = async (id) => {
   const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
   const res = await fetch(url);
   const data = await res.json();
+  displayDataWithId(data.data);
 };
 
+const displayDataWithId = data =>{
+  console.log(data);
+  const modalBody = document.getElementById('modal-container');
+  modalBody.innerHTML = `
+  <div class="col border border-danger rounded p-4 bg-danger bg-opacity-25 mb-5 mx-lg-5 mx-md-3">
+            <h4>${data.description}</h4>
+            <div class="row gap-2 my-3 plan-btn">
+                <button class="col fw-bold bg-light text-success">${data.pricing[0].price} <br> ${data.pricing[0].plan}</button>
+                <button class="col fw-bold text-danger-emphasis">${data.pricing[1].price} <br> ${data.pricing[1].plan}</button>
+                <button class="col fw-bold text-danger">${data.pricing[2].price} <br> ${data.pricing[2].plan}</button>
+            </div>
+        <!-- Features and Intergations -->
+          <div class="d-flex justify-content-between">
+            <div>
+              <h4>Features</h4>
+              <ul>
+                <li>${data.features[1].
+                  feature_name}</li>
+                <li>${data.features[2].
+                  feature_name}</li>
+                <li>${data.features[3].
+                  feature_name}</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Intergrations</h4>
+              <ul>${data.integrations.map((i) => `<li>${i}</li>`).join('')}</ul>
+            </div>
+          </div>
+      </div>
+      <!-- img and details -->
+      <div class="col border border-danger rounded text-center mx-3 mb-5">
+        <div class="img-container">
+            <img class="mt-4 img-fluid" src="${data.image_link[0]}" alt="">
+            <p class="btn btn-danger accuracy">${data.accuracy.score * 100 + '%' + '  Accuracy'}</p>
+        </div>      
+        <h2 class="mt-3">${data.use_cases[0].name}</h2>
+        <p>${data.use_cases[0].description}</p>
+      </div>
+  </div>
+  `;
+}
 
 loadData(3);
 
