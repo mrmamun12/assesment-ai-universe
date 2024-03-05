@@ -123,6 +123,6 @@ const displayDataWithId = data =>{
   </div>
   `;
 }
-
+ 
 loadData(3);
 
