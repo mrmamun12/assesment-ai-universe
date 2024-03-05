@@ -53,9 +53,22 @@ const displayData = (datas, limete) => {
 </div>
 
     `;
+    toggleSpinner(false);
     cardContainer.appendChild(creatDiv);
   });
 };
+
+const toggleSpinner = isLoading => {
+  const loader = document.getElementById('loader');
+  const body = document.getElementById('body');
+  if (isLoading) {
+    loader.classList.remove('d-none');
+  }
+  else {
+    loader.classList.add('d-none');
+  }
+
+}
 
 
 loadData(3);
