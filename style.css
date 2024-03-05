@@ -1,0 +1,36 @@
+.feature-body{
+    height: 130px;
+}
+.arrow-btn{
+    border-radius: 50%;
+    border: none;
+    padding: 10px 15px;
+}
+.img{
+    height: 300px;
+}
+.plan-btn button{
+    border: none;
+    margin: 5px 0;
+    padding: 20px;
+    border-radius: 4px;
+    width: 150px;
+}
+
+#loader{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.img-container{
+    position: relative;
+}
+
+.accuracy{
+    position: absolute;
+    top: 12%;
+    left: 69%;
+}
