@@ -6,8 +6,6 @@ const loadData = async (limete) => {
 };
 const displayData = (datas, limete) => {
 
-
-  //   console.log(datas);
   const cardContainer = document.getElementById("card-container");
   // -------------Display 3 Phones-------------------
   const showAll = document.getElementById('show-all');
