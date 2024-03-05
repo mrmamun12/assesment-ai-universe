@@ -69,6 +69,11 @@ const toggleSpinner = isLoading => {
   }
 
 }
+const showAll = (limite) => {
+  toggleSpinner(true);
+  loadData();
+};
+
 
 
 loadData(3);
