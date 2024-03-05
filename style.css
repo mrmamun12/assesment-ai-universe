@@ -1,15 +1,18 @@
-.feature-body{
+.feature-body {
     height: 130px;
 }
-.arrow-btn{
+
+.arrow-btn {
     border-radius: 50%;
     border: none;
     padding: 10px 15px;
 }
-.img{
+
+.img {
     height: 300px;
 }
-.plan-btn button{
+
+.plan-btn button {
     border: none;
     margin: 5px 0;
     padding: 20px;
@@ -17,7 +20,7 @@
     width: 150px;
 }
 
-#loader{
+#loader {
     height: 200px;
     display: flex;
     align-items: center;
@@ -25,11 +28,11 @@
 }
 
 
-.img-container{
+.img-container {
     position: relative;
 }
 
-.accuracy{
+.accuracy {
     position: absolute;
     top: 12%;
     left: 69%;

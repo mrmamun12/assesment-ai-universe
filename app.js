@@ -65,7 +65,6 @@ const toggleSpinner = isLoading => {
   else {
     loader.classList.add('d-none');
   }
-
 }
 const showAll = (limite) => {
   toggleSpinner(true);
@@ -79,7 +78,7 @@ const loadDataWithId = async (id) => {
   displayDataWithId(data.data);
 };
 
-const displayDataWithId = data =>{
+const displayDataWithId = data => {
   console.log(data);
   const modalBody = document.getElementById('modal-container');
   modalBody.innerHTML = `
@@ -96,11 +95,11 @@ const displayDataWithId = data =>{
               <h4>Features</h4>
               <ul>
                 <li>${data.features[1].
-                  feature_name}</li>
+      feature_name}</li>
                 <li>${data.features[2].
-                  feature_name}</li>
+      feature_name}</li>
                 <li>${data.features[3].
-                  feature_name}</li>
+      feature_name}</li>
               </ul>
             </div>
             <div>
@@ -121,6 +120,6 @@ const displayDataWithId = data =>{
   </div>
   `;
 }
- 
+
 loadData(3);
 
